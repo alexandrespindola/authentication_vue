@@ -1,7 +1,6 @@
 import { Ref, ref } from "vue";
 
 class AuthService {
-
   private jwt: Ref<string>;
   private error: Ref<string>;
 
@@ -18,22 +17,23 @@ class AuthService {
     return this.error;
   }
 
-  async login(email:string, password:string): Promise<boolean> {
+  async login(email: string, password: string): Promise<boolean> {
     try {
       const res = await fetch(
-        'https://directus-production-ad24.up.railway.app/auth/login',
+        "https://directus-production-ad24.up.railway.app/auth/login",
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:8080",
           },
           body: JSON.stringify({
             email: email,
             password: password,
-          })
+          }),
         }
-      )
+      );
 
       const response = await res.json();
 
@@ -44,7 +44,6 @@ class AuthService {
 
       this.jwt.value = response.data.access_token;
       return true;
-
     } catch (error) {
       this.error.value = "Login failed";
       return false;

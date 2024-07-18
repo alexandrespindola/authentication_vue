@@ -20,8 +20,8 @@
 import { ref } from 'vue';
 import AuthService from '@/services/AuthService';
 
-let email = ref('');
-let password = ref('');
+const email = ref('');
+const password = ref('');
 
 const authUser = async () => {
     const auth = new AuthService();
@@ -29,7 +29,7 @@ const authUser = async () => {
     if(success) {
         alert('Login Success!');
     } else {
-        alert('Login Failed!');
+        alert('Login Incorrect!');
     }
 }
 
