@@ -25,7 +25,8 @@ class AuthService {
           method: "POST",
           headers: {
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Allow-Control-Allow-Origin": "*",
           },
           body: JSON.stringify({
             email: email,
