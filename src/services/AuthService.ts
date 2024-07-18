@@ -20,7 +20,7 @@ class AuthService {
   async login(email: string, password: string): Promise<boolean> {
     try {
       const res = await fetch(
-        "https://directus-production-ad24.up.railway.app/auth/login",
+        "/api",
         {
           method: "POST",
           headers: {
