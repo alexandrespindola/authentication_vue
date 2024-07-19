@@ -1,7 +1,8 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/auth">Login / Register</router-link>
+    <router-link to="/auth">Login / Register</router-link> |
+    <router-link to="/firebase">Firebase Login</router-link>
   </nav>
   <router-view/>
 </template>

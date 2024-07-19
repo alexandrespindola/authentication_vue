@@ -1,6 +1,6 @@
 <template>
-  <h1>Index</h1>
+  <h1>Hello World</h1>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 </script>
