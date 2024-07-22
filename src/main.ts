@@ -1,10 +1,16 @@
+// Imports the necessary modules and initializes the Firebase app.
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
 // Bootstrap
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
+
+// Amplify
+import { Amplify } from 'aws-amplify'
+import awsExports from './aws-exports'
+Amplify.configure(awsExports)
 
 // Firebase
 import { initializeApp } from "firebase/app";
@@ -22,4 +28,5 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
+// Create the app
 createApp(App).use(router).mount('#app')

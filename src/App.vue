@@ -2,7 +2,9 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/auth">Backend</router-link> |
-    <router-link to="/firebase">Firebase</router-link>
+    <router-link to="/firebase">Firebase</router-link> |
+    <router-link to="/social">Social</router-link> |
+    <router-link to="/aws">AWS</router-link>
   </nav>
   <router-view/>
 </template>
