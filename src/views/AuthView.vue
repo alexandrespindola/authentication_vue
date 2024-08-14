@@ -26,11 +26,10 @@ const password = ref('');
 const authUser = async () => {
     const auth = new AuthService();
     const success = await auth.login(email.value, password.value);
-    if(success) {
+    if (success) {
         alert('Login Success!');
     } else {
         alert('Login Incorrect!');
     }
 }
-
 </script>

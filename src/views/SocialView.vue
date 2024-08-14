@@ -28,6 +28,4 @@ const loginGoogle = () => {
 
 };
 
-
-
 </script>

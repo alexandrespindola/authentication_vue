@@ -19,21 +19,18 @@ class AuthService {
 
   async login(email: string, password: string): Promise<boolean> {
     try {
-      const res = await fetch(
-        "/api",
-        {
-          method: "POST",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Allow-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-        }
-      );
+      const res = await fetch("/api", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Allow-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
 
       const response = await res.json();
 
@@ -44,6 +41,7 @@ class AuthService {
 
       this.jwt.value = response.data.access_token;
       return true;
+
     } catch (error) {
       this.error.value = "Login failed";
       return false;
